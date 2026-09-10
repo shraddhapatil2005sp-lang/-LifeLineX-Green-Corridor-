@@ -126,3 +126,8 @@ CREATE TABLE IF NOT EXISTS audit_logs (
     meta TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE INDEX IF NOT EXISTS idx_trips_status ON trips(status);
+CREATE INDEX IF NOT EXISTS idx_trips_vehicle_status ON trips(vehicle_id, status);
+CREATE INDEX IF NOT EXISTS idx_audit_created ON audit_logs(created_at);
+

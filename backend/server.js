@@ -3,6 +3,10 @@ const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const { Server } = require('socket.io');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+const morgan = require('morgan');
+const compression = require('compression');
 
 const { seedDatabase } = require('./seeds/seedData');
 const authRoutes = require('./routes/authRoutes');
@@ -30,9 +34,23 @@ const io = new Server(server, {
 app.set('io', io);
 
 // Middleware
+app.use(helmet({
+  contentSecurityPolicy: false // Allow inline scripts/styles for now
+}));
+app.use(compression());
 app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '1mb' }));
+app.use(express.urlencoded({ extended: true, limit: '1mb' }));
+app.use(morgan('dev'));
+
+// Rate Limiting
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 1000, // Limit each IP to 1000 requests per `window` (here, per 15 minutes)
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+app.use('/api/', apiLimiter);
 
 // Serve frontend static assets
 app.use(express.static(path.join(__dirname, '..', 'public')));
