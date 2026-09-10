@@ -2,7 +2,7 @@
 const MapHandler = {
   createMap(containerId, initialCenter = CONFIG.DEFAULT_MAP_CENTER, initialZoom = 14) {
     const map = L.map(containerId, { zoomControl: true }).setView(initialCenter, initialZoom);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
       attribution: 'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',
       maxZoom: 16
     }).addTo(map);

@@ -20,14 +20,14 @@
   <!-- ============ LOGIN SCREEN ============ -->
   <div class="login-wrap" id="loginWrap">
     <div class="login-card">
-      <div class="mark">🚨</div>
+      
       <h1>Green Corridor Management System</h1>
       <div class="sub">Kolhapur Emergency Response Network</div>
       <label for="loginUser">Username</label>
       <input type="text" id="loginUser" placeholder="e.g. dv202601" autocomplete="off" />
       <label for="loginPass">Password</label>
       <input type="password" id="loginPass" placeholder="••••••••" autocomplete="off" />
-      <button class="login-btn" id="loginBtn">🔐 LOGIN</button>
+      <button class="login-btn" id="loginBtn"> LOGIN</button>
       <div class="login-error" id="loginError"></div>
 
       <div class="login-hint">
@@ -44,30 +44,30 @@
         </div>
       </div>
 
-      <button class="login-btn" id="publicReportBtn" type="button" style="margin-top:12px;background:var(--amber);box-shadow:0 4px 14px var(--shadow-md);">🆘 REPORT ACCIDENT / FIRE (No Login Required)</button>
+      <button class="login-btn" id="publicReportBtn" type="button" style="margin-top:12px;background:var(--amber);box-shadow:0 4px 14px var(--shadow-md);"> REPORT ACCIDENT / FIRE (No Login Required)</button>
     </div>
   </div>
 
   <!-- ============ PUBLIC EMERGENCY REPORT SCREEN (NO AUTH) ============ -->
   <div class="login-wrap" id="publicWrap" style="display:none;">
     <div class="login-card public-card">
-      <div class="mark">🆘</div>
+      
       <h1>Report an Emergency</h1>
       <div class="sub">Public Accident / Fire / Rescue Reporting — Kolhapur</div>
       <div class="login-error" id="publicNotice" style="display:block;background:var(--blue-dim);border-color:var(--blue);color:var(--blue);margin-bottom:14px;">No login or password needed. Your report goes directly to the nearest emergency vehicle and Traffic Control.</div>
 
       <label for="pubType">What happened?</label>
       <select id="pubType" >
-        <option value="ACCIDENT">🚗 Road Accident</option>
-        <option value="FIRE">🔥 Fire</option>
-        <option value="MEDICAL">🩺 Medical Emergency</option>
-        <option value="RESCUE">🌊 Rescue / Disaster (NDRF)</option>
+        <option value="ACCIDENT"> Road Accident</option>
+        <option value="FIRE"> Fire</option>
+        <option value="MEDICAL"> Medical Emergency</option>
+        <option value="RESCUE"> Rescue / Disaster (NDRF)</option>
       </select>
 
       <label for="pubLocation">Nearest Landmark</label>
       <select id="pubLocation" ></select>
 
-      <button class="login-btn" id="pubUseGpsBtn" type="button" style="margin-top:10px;background:var(--panel-2);box-shadow:none;border:1px solid var(--border);color:var(--text);">📍 Use My Live GPS Location Instead</button>
+      <button class="login-btn" id="pubUseGpsBtn" type="button" style="margin-top:10px;background:var(--panel-2);box-shadow:none;border:1px solid var(--border);color:var(--text);"> Use My Live GPS Location Instead</button>
       <div class="footer-note" id="pubGpsStatus" style="padding:6px 0 0;border:none;"></div>
 
       <label for="pubDesc">Describe briefly (optional)</label>
@@ -76,7 +76,7 @@
       <label for="pubContact">Your Contact Number (optional)</label>
       <input type="text" id="pubContact" placeholder="10-digit mobile number" />
 
-      <button class="login-btn" id="pubSubmitBtn" style="margin-top:16px;">🚨 SUBMIT EMERGENCY REPORT</button>
+      <button class="login-btn" id="pubSubmitBtn" style="margin-top:16px;"> SUBMIT EMERGENCY REPORT</button>
       <div class="login-error" id="pubSuccess" style="display:none;background:var(--green-dim);border-color:var(--green);color:var(--green);"></div>
 
       <div class="login-hint" style="text-align:center;">
@@ -90,17 +90,11 @@
     <div class="topbar">
       <div class="left">
         <div class="brand">
-          <div class="mark">🚨</div>
+          
           <div><h1>Green Corridor Control</h1><span>Kolhapur Emergency Network</span></div>
         </div>
-        <div class="status-row" style="margin-left:14px;">
-          <span class="status-dot"><i></i>BACKEND ONLINE</span>
-          <span class="status-dot"><i></i>SQLITE DATABASE ONLINE</span>
-          <span class="status-dot"><i></i>GPS ONLINE</span>
-          <span class="status-dot"><i></i>WEBSOCKET ONLINE</span>
-          <span class="status-dot"><i></i>SIGNAL NETWORK ONLINE</span>
-        </div>
-        <div class="mode-badge" id="modeBadge">🟢 LIVE MODE</div>
+        
+        
       </div>
       <div class="right">
         <div class="clock" id="clock">--:--:--</div>
@@ -115,7 +109,7 @@
         <div class="driver-app">
           <div class="sidebar">
             <div class="section">
-              <h2>🚑 Vehicle & Crew</h2>
+              <h2> Vehicle & Crew</h2>
               <div class="kv"><span class="k">Driver</span><span class="v" id="drvName">—</span></div>
               <div class="kv"><span class="k">Driver ID</span><span class="v" id="drvId">—</span></div>
               <div class="kv"><span class="k">Vehicle ID</span><span class="v" id="drvVehId">—</span></div>
@@ -125,51 +119,51 @@
             </div>
 
             <div class="section" id="incidentAlertSection">
-              <h2>🆘 Public Emergency Alerts <span class="badge red" id="incidentAlertCount" style="display:none;">0</span></h2>
+              <h2> Public Emergency Alerts <span class="badge red" id="incidentAlertCount" style="display:none;">0</span></h2>
               <div id="incidentAlertList"><div class="empty">No public accident/fire reports assigned to your vehicle right now.</div></div>
             </div>
 
             <div class="section">
-              <h2>📍 Route Setup</h2>
+              <h2> Route Setup</h2>
               <label for="origin">Pickup Point</label>
               <select id="origin"></select>
               <label for="destination" id="destLabel">Destination Hospital</label>
               <select id="destination"></select>
               <div id="liveGpsBanner" style="display:none;margin-top:8px;padding:8px 10px;border-radius:7px;font-size:11.5px;font-family:'JetBrains Mono',monospace;"></div>
-              <button class="btn primary" id="dispatchBtn" style="width:100%;margin-top:14px;">🚨 START EMERGENCY TRIP</button>
+              <button class="btn primary" id="dispatchBtn" style="width:100%;margin-top:14px;"> START EMERGENCY TRIP</button>
               <div class="btn-row">
-                <button class="btn ghost sm" id="shareLocBtn">📡 SHARE LIVE LOCATION</button>
-                <button class="btn amber sm" id="requestCorridorBtn" disabled>🟢 REQUEST GREEN CORRIDOR</button>
+                <button class="btn ghost sm" id="shareLocBtn"> SHARE LIVE LOCATION</button>
+                <button class="btn amber sm" id="requestCorridorBtn" disabled> REQUEST GREEN CORRIDOR</button>
               </div>
               <div class="btn-row">
-                <button class="btn ghost sm" id="stopTripBtn" disabled>⏹ STOP TRIP</button>
-                <button class="btn ghost sm" id="cancelTripBtn" disabled>✕ CANCEL EMERGENCY</button>
+                <button class="btn ghost sm" id="stopTripBtn" disabled> STOP TRIP</button>
+                <button class="btn ghost sm" id="cancelTripBtn" disabled> CANCEL EMERGENCY</button>
               </div>
               <div class="btn-row">
-                <button class="btn green sm" id="pickedUpBtn" style="width:100%;display:none;">🏥 PATIENT PICKED UP — GO TO HOSPITAL</button>
+                <button class="btn green sm" id="pickedUpBtn" style="width:100%;display:none;"> PATIENT PICKED UP — GO TO HOSPITAL</button>
               </div>
               <div class="btn-row">
-                <button class="btn primary sm" id="sosBtn" style="width:100%;">🆘 EMERGENCY SOS</button>
+                <button class="btn primary sm" id="sosBtn" style="width:100%;"> EMERGENCY SOS</button>
               </div>
             </div>
 
             <div class="section">
-              <h2>📊 Trip Metrics</h2>
+              <h2> Trip Metrics</h2>
               <div id="metricsBox"><div class="empty">Select pickup + hospital, then start emergency trip.</div></div>
             </div>
 
             <div class="section">
-              <h2>🚦 Upcoming Signals</h2>
+              <h2> Upcoming Signals</h2>
               <div id="signalList"><div class="empty">Signal coordination plan appears after route is computed.</div></div>
             </div>
 
             <div class="section">
-              <h2>🔌 IoT Signal Status</h2>
+              <h2> IoT Signal Status</h2>
               <div id="iotList"><div class="empty">Connected controllers report ON/OFF state during a dispatch.</div></div>
             </div>
 
             <div class="section">
-              <h2>🖥 Dispatch Log</h2>
+              <h2> Dispatch Log</h2>
               <div class="log-box" id="drvLogBox"><div><span class="l-time">[--:--:--]</span> System idle.</div></div>
             </div>
           </div>
@@ -221,8 +215,8 @@
                 <input type="checkbox" id="medOxygen" style="width:auto;"> Oxygen requirement
               </label>
               <div class="btn-row">
-                <button class="btn blue sm" id="medUpdateBtn">💾 Update Case</button>
-                <button class="btn green sm" id="medIncomingBtn">📨 Send "Patient Incoming"</button>
+                <button class="btn blue sm" id="medUpdateBtn"> Update Case</button>
+                <button class="btn green sm" id="medIncomingBtn"> Send "Patient Incoming"</button>
               </div>
             </div>
             <div class="card">
@@ -240,30 +234,30 @@
           <div class="tp-map-wrap"><div id="mapTP" style="width:100%;height:100%;"></div></div>
           <div class="tp-side">
             <div class="section" style="margin-bottom:16px;">
-              <h2>🚑 Active Emergency Vehicle</h2>
+              <h2> Active Emergency Vehicle</h2>
               <div id="tpVehicleCard"><div class="empty">No active emergency vehicle right now.</div></div>
             </div>
             <div class="section" style="margin-bottom:16px;">
-              <h2>🚦 Signal Sequence</h2>
+              <h2> Signal Sequence</h2>
               <div id="tpSignalSeq"><div class="empty">Appears once a route is dispatched.</div></div>
             </div>
             <div class="section" style="margin-bottom:16px;">
-              <h2>🟢 Corridor Control</h2>
+              <h2> Corridor Control</h2>
               <div class="btn-row">
-                <button class="btn green sm" id="tpApproveBtn" disabled>✔ Approve Corridor</button>
-                <button class="btn primary sm" id="tpRejectBtn" disabled>✕ Reject</button>
+                <button class="btn green sm" id="tpApproveBtn" disabled> Approve Corridor</button>
+                <button class="btn primary sm" id="tpRejectBtn" disabled> Reject</button>
               </div>
               <div class="btn-row">
-                <button class="btn amber sm" id="tpPauseBtn" disabled>⏸ Pause</button>
-                <button class="btn ghost sm" id="tpEndBtn" disabled>⏹ End Corridor</button>
+                <button class="btn amber sm" id="tpPauseBtn" disabled> Pause</button>
+                <button class="btn ghost sm" id="tpEndBtn" disabled> End Corridor</button>
               </div>
               <div class="btn-row">
-                <button class="btn ghost sm" id="tpOverrideBtn" disabled>⚠ Override Recommendation</button>
-                <button class="btn ghost sm" id="tpAlertBtn">📢 Send Alert</button>
+                <button class="btn ghost sm" id="tpOverrideBtn" disabled> Override Recommendation</button>
+                <button class="btn ghost sm" id="tpAlertBtn"> Send Alert</button>
               </div>
             </div>
             <div class="section">
-              <h2>🖥 Audit / Action Log</h2>
+              <h2> Audit / Action Log</h2>
               <div class="log-box" id="tpLogBox"><div><span class="l-time">[--:--:--]</span> Traffic control idle.</div></div>
             </div>
           </div>
@@ -351,13 +345,13 @@
         </div>
       </div>
     </div>
-    <div class="footer-note">Kolhapur Emergency Response Network · Real-time WebSocket & SQLite active · Signal actuation requires Traffic Control authorization.</div>
+    
   </div>
 
   <!-- ============ ADMIN: ADD USER MODAL ============ -->
   <div class="modal-overlay" id="addUserOverlay">
     <div class="modal-box">
-      <h3>Add New User <span class="close-x" id="closeAddUserBtn">✕</span></h3>
+      <h3>Add New User <span class="close-x" id="closeAddUserBtn"></span></h3>
 
       <label>Role</label>
       <select id="auRole">
@@ -445,3 +439,5 @@
   <script src="js/app.js"></script>
 </body>
 </html>
+
+
