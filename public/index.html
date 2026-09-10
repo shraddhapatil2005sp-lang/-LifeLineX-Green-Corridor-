@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
   
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  
   
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="css/styles.css" />
@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <button class="login-btn" id="publicReportBtn" type="button" style="margin-top:12px;background:linear-gradient(180deg,#F5A524,#B77410);box-shadow:0 4px 14px rgba(181,116,16,0.35);">🆘 REPORT ACCIDENT / FIRE (No Login Required)</button>
+      <button class="login-btn" id="publicReportBtn" type="button" style="margin-top:12px;background:var(--amber);box-shadow:0 4px 14px var(--shadow-md);">🆘 REPORT ACCIDENT / FIRE (No Login Required)</button>
     </div>
   </div>
 
@@ -54,10 +54,10 @@
       <div class="mark">🆘</div>
       <h1>Report an Emergency</h1>
       <div class="sub">Public Accident / Fire / Rescue Reporting — Kolhapur</div>
-      <div class="login-error" id="publicNotice" style="display:block;background:var(--blue-dim);border-color:#24345f;color:var(--blue);margin-bottom:14px;">No login or password needed. Your report goes directly to the nearest emergency vehicle and Traffic Control.</div>
+      <div class="login-error" id="publicNotice" style="display:block;background:var(--blue-dim);border-color:var(--blue);color:var(--blue);margin-bottom:14px;">No login or password needed. Your report goes directly to the nearest emergency vehicle and Traffic Control.</div>
 
       <label for="pubType">What happened?</label>
-      <select id="pubType" style="width:100%;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:7px;padding:10px 11px;font-size:13.5px;">
+      <select id="pubType" >
         <option value="ACCIDENT">🚗 Road Accident</option>
         <option value="FIRE">🔥 Fire</option>
         <option value="MEDICAL">🩺 Medical Emergency</option>
@@ -65,19 +65,19 @@
       </select>
 
       <label for="pubLocation">Nearest Landmark</label>
-      <select id="pubLocation" style="width:100%;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:7px;padding:10px 11px;font-size:13.5px;"></select>
+      <select id="pubLocation" ></select>
 
       <button class="login-btn" id="pubUseGpsBtn" type="button" style="margin-top:10px;background:var(--panel-2);box-shadow:none;border:1px solid var(--border);color:var(--text);">📍 Use My Live GPS Location Instead</button>
       <div class="footer-note" id="pubGpsStatus" style="padding:6px 0 0;border:none;"></div>
 
       <label for="pubDesc">Describe briefly (optional)</label>
-      <textarea id="pubDesc" placeholder="e.g. Two-wheeler collision, one person injured…" style="width:100%;height:70px;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:7px;padding:10px;font-size:12.5px;resize:vertical;font-family:inherit;"></textarea>
+      <textarea id="pubDesc" placeholder="e.g. Two-wheeler collision, one person injured…" ></textarea>
 
       <label for="pubContact">Your Contact Number (optional)</label>
       <input type="text" id="pubContact" placeholder="10-digit mobile number" />
 
       <button class="login-btn" id="pubSubmitBtn" style="margin-top:16px;">🚨 SUBMIT EMERGENCY REPORT</button>
-      <div class="login-error" id="pubSuccess" style="display:none;background:var(--green-dim);border-color:#16493c;color:var(--green);"></div>
+      <div class="login-error" id="pubSuccess" style="display:none;background:var(--green-dim);border-color:var(--green);color:var(--green);"></div>
 
       <div class="login-hint" style="text-align:center;">
         <a href="#" id="pubBackBtn" style="color:var(--blue);text-decoration:none;font-size:12px;">← Back to Login</a>
@@ -227,7 +227,7 @@
             </div>
             <div class="card">
               <h3>Notes</h3>
-              <textarea id="medNotes" placeholder="Additional clinical notes for the receiving hospital…" style="width:100%;height:88px;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:7px;padding:10px;font-size:12.5px;resize:vertical;"></textarea>
+              <textarea id="medNotes" placeholder="Additional clinical notes for the receiving hospital…" ></textarea>
               <div class="footer-note" style="padding:8px 0 0;">Visible only to Medical Staff, the assigned Hospital, and Admin — never to Traffic Police, per privacy policy.</div>
             </div>
           </div>
