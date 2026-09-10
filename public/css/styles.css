@@ -307,3 +307,62 @@ input.search:focus, select.filt:focus { border-color: var(--blue); }
 .tp-side { border-left: 1px solid var(--border); background: var(--panel); overflow-y: auto; padding: 16px; }
 
 .footer-note { font-size: 10.5px; color: var(--muted-2); padding: 10px 26px; border-top: 1px solid var(--border); }
+
+/* ============ MOBILE RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .login-card { width: 90%; padding: 20px; }
+  .login-wrap::before, .login-wrap::after { display: none; }
+  .topbar { padding: 8px 10px; height: auto; min-height: 54px; flex-wrap: wrap; gap: 10px; }
+  .status-row { display: none; }
+  .topbar .right { flex-wrap: wrap; justify-content: flex-start; width: 100%; gap: 8px; }
+  .grid.cols-4, .grid.cols-3, .grid.cols-2 { grid-template-columns: 1fr; }
+  .driver-app { grid-template-rows: 350px auto auto; grid-template-columns: 1fr; grid-template-areas: "map" "sidebar" "rail"; overflow-y: auto; height: auto; }
+  .sidebar { height: auto; overflow-y: visible; border-right: none; border-bottom: 1px solid var(--border); }
+  #map { height: 350px; }
+  .tp-layout { grid-template-columns: 1fr; grid-template-rows: 350px auto; overflow-y: auto; }
+  .tp-map-wrap { height: 350px; }
+  .tp-side { height: auto; overflow-y: visible; border-left: none; border-top: 1px solid var(--border); }
+  .rail { padding: 10px; border-top: 1px solid var(--border); }
+  .rail-head h3 { font-size: 10px; }
+  .tabs { flex-wrap: wrap; }
+  .tab { flex: 1; text-align: center; }
+  .modal-box { width: 95%; }
+  .scroll-page { padding: 10px; }
+  .btn-row { flex-direction: column; }
+  .btn-row .btn { width: 100%; }
+  #publicWrap .login-card { width: 90%; }
+}
+@media (max-width: 480px) {
+  .topbar .brand h1 { font-size: 12px; }
+  .stat .val { font-size: 18px; }
+  .metric-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ============ UI ENHANCEMENTS ============ */
+.btn { transition: all 0.2s ease; }
+.btn:not(:disabled):hover { filter: brightness(1.15); transform: translateY(-1px); }
+.btn:not(:disabled):active { transform: translateY(1px); }
+.card { transition: box-shadow 0.2s ease; }
+.card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.3); border-color: var(--muted-2); }
+input, select, textarea { transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+input:focus, select:focus, textarea:focus { box-shadow: 0 0 0 2px rgba(91,140,255,0.2); }
+.stat { transition: transform 0.2s ease; }
+.stat:hover { transform: translateY(-2px); }
+
+.public-card { max-width: 440px; width: 100%; }
+
+@media (max-width: 768px) {
+  #admin-users h3 span { flex-wrap: wrap; margin-top: 10px; }
+  .tp-layout, .driver-app { grid-template-rows: auto auto auto; } /* Let map decide its height */
+  .grid { gap: 10px; }
+  .stat { padding: 10px; }
+  .card h3 { font-size: 11px; }
+}
+
+
+@media (max-width: 768px) {
+  #map { min-height: 300px; height: 50vh; }
+  .tp-map-wrap { min-height: 300px; height: 50vh; }
+}
+
